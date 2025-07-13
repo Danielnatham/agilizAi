@@ -35,9 +35,16 @@ export default function Login({ status, canResetPassword }: LoginProps) {
     };
 
     return (
-        <AuthLayout title="AgilizAI" description="Entre com seu e-mail e senha para acessar sua conta.">
+        <AuthLayout title="" description="">
+            <div className="flex justify-center mb-6">
+                <img
+                    src="/storage/AC-HORIZONTAL-AZUL.png"
+                    alt="Logo AgilizAI"
+                    className="h-16 w-auto"
+                    loading="lazy"
+                />
+            </div>
             <Head title="Login" />
-
             <form className="flex flex-col gap-6" onSubmit={submit}>
                 <div className="grid gap-6">
                     <div className="grid gap-2">
