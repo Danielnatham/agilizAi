@@ -5,8 +5,8 @@ import { Head } from '@inertiajs/react';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Painel de Controle',
-        href: '/painel',
+        title: 'Gerenciamento de Usuários',
+        href: '/gerenciar-usuarios',
     },
 ];
 

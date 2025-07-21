@@ -2,16 +2,28 @@ import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { type NavItem } from '@/types';
+import { Role, type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { Bolt, BookOpen, Folder } from 'lucide-react';
+import { Bolt, BookOpen, Folder, SquareUser } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
     {
         title: 'Painel de Controle',
-        href: '/dashboard',
+        href: '/painel',
         icon: Bolt,
+    },
+    {
+        title: 'Solicitações',
+        href: '/solicitacoes',
+        icon: Folder,
+        role: Role.ANALYST,
+    },
+    {
+        title: 'Usuários',
+        href: '/usuarios',
+        icon: SquareUser,
+        role: Role.ADMIN,
     },
 ];
 
@@ -35,7 +47,7 @@ export function AppSidebar() {
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <Link href="/dashboard" prefetch>
+                            <Link href="/painel" prefetch>
                                 <AppLogo />
                             </Link>
                         </SidebarMenuButton>
