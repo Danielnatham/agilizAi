@@ -2,39 +2,40 @@ import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { Role, type NavItem } from '@/types';
+import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { Bolt, BookOpen, Folder, SquareUser } from 'lucide-react';
+import { BookOpen, ChartColumn, Folder, SquareUser, Target } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Painel de Controle',
+        title: 'Inicio',
         href: '/painel',
-        icon: Bolt,
+        icon: Target,
+    },
+    {
+        title: 'Painel de controle',
+        href: '/gerencia/painel',
+        icon: ChartColumn,
+        role: 'ANALYST',
     },
     {
         title: 'Solicitações',
-        href: '/solicitacoes',
+        href: '/gerencia/solicitacoes',
         icon: Folder,
-        role: Role.ANALYST,
-    },
-    {
-        title: 'Usuários',
-        href: '/usuarios',
-        icon: SquareUser,
-        role: Role.ADMIN,
+        role: 'ANALYST',
     },
 ];
 
 const footerNavItems: NavItem[] = [
     {
-        title: 'Repository',
-        href: 'https://github.com/laravel/react-starter-kit',
-        icon: Folder,
+        title: 'Usuários',
+        href: '/admin/usuarios',
+        icon: SquareUser,
+        role: 'ADMIN',
     },
     {
-        title: 'Documentation',
+        title: 'Documentação',
         href: 'https://laravel.com/docs/starter-kits#react',
         icon: BookOpen,
     },

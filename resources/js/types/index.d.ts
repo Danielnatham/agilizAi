@@ -3,7 +3,7 @@ import type { Config } from 'ziggy-js';
 
 export interface Auth {
     user: User;
-    role: Role
+    roles: Role
 }
 
 export interface BreadcrumbItem {
@@ -44,8 +44,4 @@ export interface User {
     [key: string]: unknown; // This allows for additional properties...
 }
 
-export enum Role {
-    ADMIN = 'admin',
-    USER = 'user',
-    ANALYST = 'analyst',
-}
+export type Role = 'ADMIN' | 'USER' | 'ANALYST';

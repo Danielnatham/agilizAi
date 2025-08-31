@@ -5,12 +5,12 @@ import { Head } from '@inertiajs/react';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Gerenciamento de Usuários',
-        href: '/gerenciar-usuarios',
+        title: 'Administrativo / Painel',
+        href: '/gerencia/painel',
     },
 ];
 
-export default function UserManagement() {
+export default function Dashboard() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />

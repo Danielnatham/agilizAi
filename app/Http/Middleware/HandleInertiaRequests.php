@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 
@@ -42,7 +44,7 @@ class HandleInertiaRequests extends Middleware
             'name' => config('app.name'),
             'auth' => [
                 'user' => $request->user(),
-                'role' => $request->user() ? $request->user()->role : null,
+                'roles' =>  Arr::map($request->user()?->roles->toArray() ?? [], fn ($role) => $role['name']),
             ],
             'ziggy' => fn (): array => [
                 ...(new Ziggy)->toArray(),

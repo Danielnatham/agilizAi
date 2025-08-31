@@ -1,10 +1,11 @@
-version: '3.8'
 name: agilizai_app
 services:
   app:
-    image: laravelphp/php-fpm:8.2
+    image: php:8.2-fpm
     container_name: laravel_app
     working_dir: /var/www
+    ports:
+      - "8000:8000"
     volumes:
       - ../:/var/www
     environment:
@@ -23,7 +24,7 @@ services:
       MYSQL_DATABASE: agilizaai
       MYSQL_USER: agilizaai
       MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: rootsecret
+      MYSQL_ROOT_PASSWORD: secret
     volumes:
       - dbdata:/var/lib/mysql
 
